@@ -57,7 +57,7 @@
                     <td>{{ $appointment->client->last_name }}</td>
                     <td>
                         <?php 
-                            $start_time_unformatted = date_create($appointment->end_time);
+                            $start_time_unformatted = date_create($appointment->start_time);
                             $start_time_formatted = date_format($start_time_unformatted, "H:i")
                         ?>
                         {{ $start_time_formatted }}
