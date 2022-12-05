@@ -24,10 +24,10 @@ class StoreConsultant extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'phone' => 'required',
-            'email' => 'required'
+            'first_name' => 'required|string|max:500',
+            'last_name' => 'required|string|max:500',
+            'phone' => 'required|string|max:255',
+            'email' => 'required|string|max:255|unique:consultants'
         ];
     }
 }

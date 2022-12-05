@@ -24,14 +24,14 @@ class StoreClient extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'country' => 'required',
-            'state' => 'required',
-            'city' => 'required',
-            'address' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
+            'first_name' => 'required|string|max:500',
+            'last_name' => 'required|string|max:500',
+            'country' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+            'email' => 'required|string|max:255|unique:clients',
         ];
     }
 }
