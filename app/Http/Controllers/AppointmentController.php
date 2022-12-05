@@ -200,10 +200,19 @@ class AppointmentController extends Controller
         return view('appointments.report');
     }
 
+    protected function validateForm(Request $request) {
+         $request->validate([
+            'consultant_id' => ['required','integer','min:1'],
+            'date' => ['required']
+         ]);
+    }
+
     public function report_search(Request $request)
     {
-        $input = $request->input();
+        $this->validateForm($request);
 
+        $input = $request->input();
+       
         $date_unformatted = date_create($input['date']);
         $date_formatted = date_format($date_unformatted,"Y-m-d");
 

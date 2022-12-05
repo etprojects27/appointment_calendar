@@ -13,6 +13,9 @@
                 <option value="0">-</option>
             </select>
         </div>
+        @error('consultant_id')
+            <span style="color: red">The consultant field is required.</span>
+        @enderror
 
         <div class="form-group">
             <label for="date" class="col-sm-1 col-form-label"><div class="d-flex flex-row">Date</div></label>
@@ -25,6 +28,9 @@
                     </span>
                 </div>
         </div>
+        @error('date')
+            <span style="color: red">{{ $message }}</span>
+        @enderror
         
         <div class="d-flex justify-content-end mt-3"><button type="submit" class="btn btn-primary btn-block">Search</button></div>
     </form>
